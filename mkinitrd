@@ -65,6 +65,7 @@ add_binary() {
 
 add_module() {
 	# add_module modname
+	echo $1
 	local modname modpath
 	[ "$1" ] || return
 	if modinfo -k $KERNEL $1 &>/dev/null; then
