@@ -22,7 +22,8 @@ if [ ! -e $MEDIA ]; then
 	msg "wait $livedelay seconds..."
 	sleep $livedelay
 	if [ ! -e $MEDIA ]; then
-		msg "media $MEDIA is not appeared even after wait $livedelay seconds..." || problem
+		msg "media $MEDIA is not appeared even after wait $livedelay seconds..."
+		sh
 	fi
 fi
 
