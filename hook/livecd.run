@@ -16,7 +16,7 @@ SYSTEM=/run/initramfs/system
 WRITEDIR=/run/initramfs/overlayfs/write
 WORKDIR=/run/initramfs/overlayfs/work
 sfsimg=$MEDIUM/boot/filesystem.sfs
-livedelay=${livedelay:-5}
+livedelay=${livedelay:-300}
 
 if [ ! -e $MEDIA ]; then
 	msg "wait $livedelay seconds..."
