@@ -19,10 +19,10 @@ sfsimg=$MEDIUM/boot/filesystem.sfs
 livedelay=${livedelay:-5}
 
 if [ ! -e $MEDIA ]; then
-	msg "wait $delay seconds..."
-	sleep $delay
+	msg "wait $livedelay seconds..."
+	sleep $livedelay
 	if [ ! -e $MEDIA ]; then
-		msg "media is not appeared even after wait $delay seconds..."
+		msg "media is not appeared even after wait $livedelay seconds..."
 		msg "try increase delay by append 'livedelay=<seconds>' to boot cmdline"
 		sleep 99999
 	fi
