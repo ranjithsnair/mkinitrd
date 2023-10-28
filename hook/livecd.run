@@ -21,7 +21,6 @@ livedelay=${livedelay:-5}
 if [ ! -e $MEDIA ]; then
 	msg "wait $livedelay seconds..."
 	sleep $livedelay
-	mount
 	if [ ! -e $MEDIA ]; then
 		msg "media $MEDIA is not appeared even after wait $livedelay seconds..." || problem
 	fi
