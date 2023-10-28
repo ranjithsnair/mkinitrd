@@ -46,6 +46,7 @@ add_binary() {
 	if [ -x $INITRDDIR/$bin ]; then
 		return
 	fi
+	echo $bin
 	add_file $bin
 	for i in $(ldd $bin | sed "s/\t//" | cut -d " " -f1); do
 		case $i in
@@ -59,6 +60,7 @@ add_binary() {
 		if [ -e $INITRDDIR/$lib ]; then
 			continue
 		fi
+		echo $lib
 		add_file $lib
 	done
 }
