@@ -53,7 +53,7 @@ add_binary() {
 		case $i in
 			linux-vdso.so.1|linux-gate.so.1) continue;;
 		esac
-		lib=$(PATH=/lib:/lib64:/usr/lib type -p $i)
+		lib=$(PATH=/usr/lib:/lib64:/lib type -p $i)
 		if [ ! "$lib" ]; then
 			msgwarn "missing library: $i"
 			continue
@@ -372,7 +372,7 @@ finalize_modules
 ( cd $INITRDDIR ; find . | LANG=C $CPIO -o -H newc --quiet | gzip -9 ) > $INITRD
 
 # Remove the temporary directories
-#cleanup
+cleanup
 
 echo "Generating initrd done: $INITRD ($(du -sh $INITRD | awk '{print $1}'))"
 
