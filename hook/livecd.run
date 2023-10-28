@@ -6,6 +6,7 @@
 mkdir $newroot
 
 modprobe isofs
+modprobe squashfs
 modprobe overlay
 
 MEDIA=/dev/sr0
