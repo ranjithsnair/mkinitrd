@@ -46,8 +46,6 @@ add_binary() {
 	if [ -x $INITRDDIR/$bin ]; then
 		return
 	fi
-	echo $bin
-	echo "========="
 	add_file $bin
 	for i in $(ldd $bin | sed "s/\t//" | cut -d " " -f1); do
 		case $i in
@@ -58,7 +56,6 @@ add_binary() {
 			msgwarn "missing library: $i"
 			continue
 		fi
-		echo $lib
 		if [ -e $INITRDDIR/$lib ]; then
 			continue
 		fi
