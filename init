@@ -8,7 +8,7 @@ shell() {
 
 problem() {
 	msg "Encountered a problem, dropping you to a shell."
-	shell
+	sh
 }
 
 msg() {
