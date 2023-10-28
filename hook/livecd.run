@@ -5,8 +5,7 @@
 
 mkdir $newroot
 
-modprobe loop
-modprobe cdrom
+modprobe isofs
 modprobe overlay
 
 LIVECDLABEL=LIVECD
