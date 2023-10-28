@@ -21,8 +21,9 @@ livedelay=${livedelay:-60}
 if [ ! -e $MEDIA ]; then
 	msg "wait $livedelay seconds..."
 	sleep $livedelay
+	mount
 	if [ ! -e $MEDIA ]; then
-		msg "media is not appeared even after wait $livedelay seconds..."
+		msg "media $MEDIA is not appeared even after wait $livedelay seconds..."
 		msg "try increase delay by append 'livedelay=<seconds>' to boot cmdline"
 		sleep 99999
 	fi
