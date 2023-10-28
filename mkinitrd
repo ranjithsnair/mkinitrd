@@ -58,10 +58,10 @@ add_binary() {
 			msgwarn "missing library: $i"
 			continue
 		fi
+		echo $lib
 		if [ -e $INITRDDIR/$lib ]; then
 			continue
 		fi
-		echo $lib
 		add_file $lib
 	done
 }
