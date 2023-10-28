@@ -8,8 +8,7 @@ mkdir $newroot
 modprobe isofs
 modprobe overlay
 
-LIVECDLABEL=LIVECD
-MEDIA=/dev/disk/by-label/$LIVECDLABEL
+MEDIA=/dev/sr0
 MEDIUM=/run/initramfs/medium
 SYSTEM=/run/initramfs/system
 WRITEDIR=/run/initramfs/overlayfs/write
