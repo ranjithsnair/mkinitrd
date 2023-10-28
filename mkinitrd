@@ -47,6 +47,7 @@ add_binary() {
 		return
 	fi
 	echo $bin
+	echo "========="
 	add_file $bin
 	for i in $(ldd $bin | sed "s/\t//" | cut -d " " -f1); do
 		case $i in
@@ -371,7 +372,7 @@ finalize_modules
 ( cd $INITRDDIR ; find . | LANG=C $CPIO -o -H newc --quiet | gzip -9 ) > $INITRD
 
 # Remove the temporary directories
-#cleanup
+cleanup
 
 echo "Generating initrd done: $INITRD ($(du -sh $INITRD | awk '{print $1}'))"
 
