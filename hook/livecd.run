@@ -5,11 +5,9 @@
 
 mkdir $newroot
 
-modprobe loop
-modprobe cdrom
 modprobe overlay
 
-MEDIA=/dev/disk/by-label/LIVECD
+MEDIA=/dev/sr0
 MEDIUM=/run/initramfs/medium
 SYSTEM=/run/initramfs/system
 WRITEDIR=/run/initramfs/overlayfs/write
