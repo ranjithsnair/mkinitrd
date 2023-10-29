@@ -5,8 +5,8 @@
 
 mkdir $newroot
 
-modprobe isofs
-modprobe squashfs
+modprobe loop
+modprobe cdrom
 modprobe overlay
 
 MEDIA=/dev/disk/by-label/LIVECD
