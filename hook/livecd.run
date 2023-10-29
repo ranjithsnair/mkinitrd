@@ -9,7 +9,7 @@ modprobe isofs
 modprobe squashfs
 modprobe overlay
 
-MEDIA=/dev/sr0
+MEDIA=/dev/disk/by-label/LIVECD
 MEDIUM=/run/initramfs/medium
 SYSTEM=/run/initramfs/system
 WRITEDIR=/run/initramfs/overlayfs/write
