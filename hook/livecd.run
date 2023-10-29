@@ -15,21 +15,16 @@ SYSTEM=/run/initramfs/system
 WRITEDIR=/run/initramfs/overlayfs/write
 WORKDIR=/run/initramfs/overlayfs/work
 sfsimg=$MEDIUM/boot/filesystem.sfs
-wait=${wait:-100}
-count=0
+livedelay=${livedelay:-5}
 
 if [ ! -e $MEDIA ]; then
-		msg "wait for media device..."
-		while [ ! -e $MEDIA ]; do
-			sleep 1
-			count=$((count+1))
-			if [ "$count" -ge "$wait" ]; then
-				msg "media is not appeared even after wait for $wait seconds..."
-				msg "try increase wait time by append 'wait=<seconds>' to boot cmdline"
-				sleep 9999
-			fi
-		done
+	msg "wait $livedelay seconds..."
+	sleep $livedelay
+	if [ ! -e $MEDIA ]; then
+		msg "media $MEDIA is not appeared even after wait $livedelay seconds..."
+		sh
 	fi
+fi
 
 mkdir -p $MEDIUM $SYSTEM $WRITEDIR $WORKDIR
 
