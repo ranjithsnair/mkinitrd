@@ -5,6 +5,8 @@
 
 mkdir $newroot
 
+modprobe cdrom
+modprobe loop
 modprobe isofs
 modprobe squashfs
 modprobe overlay
