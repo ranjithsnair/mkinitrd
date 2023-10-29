@@ -15,7 +15,7 @@ SYSTEM=/run/initramfs/system
 WRITEDIR=/run/initramfs/overlayfs/write
 WORKDIR=/run/initramfs/overlayfs/work
 sfsimg=$MEDIUM/boot/filesystem.sfs
-wait=${wait:-5}
+wait=${wait:-100}
 count=0
 
 if [ ! -e $MEDIA ]; then
