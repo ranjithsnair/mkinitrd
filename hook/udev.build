@@ -5,7 +5,6 @@ add_file /lib/udev/rules.d/50-udev-default.rules
 add_file /lib/udev/rules.d/60-persistent-storage.rules
 add_file /lib/udev/rules.d/64-btrfs.rules
 add_file /lib/udev/rules.d/80-drivers.rules
-add_file /lib/udev/rules.d/99-custom-udev-log.rules
 add_binary udevadm
 add_binary udevd
 add_binary /lib/udev/ata_id
