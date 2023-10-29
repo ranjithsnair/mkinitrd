@@ -5,11 +5,9 @@
 
 mkdir $newroot
 
-modprobe cdrom 2>/dev/null
-modprobe loop 2>/dev/null
 modprobe isofs
 modprobe squashfs
-modprobe overlay 2>/dev/null
+modprobe overlay
 
 MEDIA=/dev/disk/by-label/LIVECD
 MEDIUM=/run/initramfs/medium
