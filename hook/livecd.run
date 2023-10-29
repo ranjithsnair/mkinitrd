@@ -5,6 +5,7 @@
 
 mkdir $newroot
 
+modprobe isofs
 modprobe overlay
 
 MEDIA=/dev/sr0
